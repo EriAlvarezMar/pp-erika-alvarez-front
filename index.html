@@ -1,0 +1,72 @@
+<html ng-app="Front">
+<meta charset="ISO-8859-1">
+<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+
+<head>
+    <title>Front-End Usuarios</title>
+
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body ng-controller="MainController">
+        
+        <div class="container">
+            <h1> Usuarios </h1>
+            <form ng-action="agregarUsuario()">
+                <div class="row">
+                    <div class="span4">
+                        <label> Nombre </label>
+                        <input type="text" ng-model="name" />
+                    </div>
+                    <div class="span4">
+                        <label> Tel&eacutefono </label>
+                        <input type="text" ng-model="phone" />
+                    </div>
+                    <div class="span4">
+                        <label> Edad </label>
+                        <input type="text" ng-model="age" />
+                    </div>
+                </div>
+                <div>
+                    <nav id="menu">
+                        <div class="span4">
+                            <label> Genero </label>
+                            <input type="text" ng-model="gender" />
+                        </div>
+                    </nav>
+                </div>
+                <div class="row">
+                    <div class="span4">
+                        <input type="submit" value="Guardar" class="btn btn-success" />
+                    </div>
+                </div>
+            </form>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th> Nombre </th>
+                        <th> Tel&eacutefono </th>
+                        <th> Edad </th>
+                        <th> Genero </th>
+                        <th> </th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in posts">
+                        <td> {{item.name}} </td>
+                        <td> {{item.phone}} </td>
+                        <td> {{item.age}} </td>
+                        <td> {{item.gender}} </td>
+                        <td>
+                            <button class="btn btn-danger" ng-click="eliminarUsuario($id)"> Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>
